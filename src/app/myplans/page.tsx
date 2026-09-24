@@ -10,21 +10,21 @@ const MyPlan = () => {
           Twelve lifts covering every major muscle group.
         </p>
       </div>
-      <div className="px-8 py-12 my-6 bg-[#13161D] border border-[#232732] rounded-2xl w-full flex">
-        <div className="w-1/3">
+      <div className="px-8 py-12 my-6 bg-[#13161D] border border-[#232732] rounded-2xl w-full flex lg:flex-row flex-col gap-5">
+        <div className="w-1/3 lg:border-0 border-b border-[#1d202a] lg:pb-0 pb-4">
           <h6 className="text-sm text-[#8A92A0] mb-2">Exercises</h6>
           <h3 className="text-4xl text-white">0</h3>
         </div>
-        <div className="w-1/3 border-l border-[#1d202a] ps-8">
+        <div className="w-1/3 lg:border-l lg:border-b-0 border-b border-[#1d202a] lg:ps-8 lg:pb-0 pb-4">
           <h6 className="text-sm text-[#8A92A0] mb-2">Minutes</h6>
           <h3 className="text-4xl text-white">0</h3>
         </div>
-        <div className="w-1/3 border-l border-[#1d202a] ps-8">
+        <div className="w-1/3 lg:border-l lg:border-b-0 border-b border-[#1d202a] lg:ps-8 lg:pb-0 pb-4">
           <h6 className="text-sm text-[#8A92A0] mb-2">Calories</h6>
           <h3 className="text-4xl text-white">0</h3>
         </div>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex lg:flex-row flex-col gap-6 justify-between items-center">
         <div className="bg-[#151921] p-2 border border-[#232732] rounded-xl ">
           <button className=" text-white bg-[#1F242D] border-[#2B303D] font-bold text-sm  rounded-lg  py-1.5 px-4 btn shadow-none">
             Today&apos;s Plan
