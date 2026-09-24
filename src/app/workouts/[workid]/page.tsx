@@ -15,9 +15,9 @@ const WorkoutDetails = async ({
   const work: fitType = await res.json();
 
   return (
-    <div className="container mx-auto my-12">
-      <div className="flex gap-20 justify-center items-center">
-        <div className="w-1/2 h-full min-h-150 relative rounded-2xl overflow-hidden">
+    <div className="container mx-auto my-12 max-w-9/10">
+      <div className="flex gap-20 justify-center items-center lg:flex-row flex-col">
+        <div className="lg:w-1/2 h-full lg:min-h-150 relative rounded-2xl overflow-hidden">
           <Image
             src={work.image}
             alt={work.name}
@@ -26,7 +26,7 @@ const WorkoutDetails = async ({
             className="object-cover"
           />
         </div>
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <h2 className="font-bold text-4xl text-white mb-5">{work.name}</h2>
           <p className="text-[#9CA3AF] text-lg mb-6">{work.description}</p>
           <div className="mb-4 flex gap-2">
