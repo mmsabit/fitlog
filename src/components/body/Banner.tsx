@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div className="container mx-auto my-12 bg-[#15171d] rounded-2xl p-14 flex items-center justify-between">
-      <div className="w-1/2">
+    <div className="container mx-auto my-12 bg-[#15171d] rounded-2xl lg:p-14 px-7 py-14 flex items-center justify-between max-w-9/10 lg:flex-row flex-col gap-15">
+      <div className="lg:w-1/2 w-full text-center lg:text-start">
         <div className="text-[12px] text-[#C2F800] ">WORKOUT LIBRARY</div>
-        <h1 className="font-extrabold text-6xl text-white my-6">
+        <h1 className="font-extrabold md:text-6xl text-4xl text-white my-6">
           TRAIN WITH INTENT. LOG EVERY SET.
         </h1>
         <p className="text-lg text-[#9CA3AF]">
@@ -17,7 +17,7 @@ const Banner = () => {
           BROWSE WORKOUTS
         </button>
       </div>
-      <div className="w-1/2 flex justify-center">
+      <div className="lg:w-1/2 flex justify-center">
       <Image
       src={bannerImg}
       alt="Banner Img"
