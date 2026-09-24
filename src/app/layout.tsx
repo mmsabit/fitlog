@@ -4,7 +4,8 @@ import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import Navber from "@/components/navber/Navber";
 import Footer from "@/components/Footer";
-import WorkOutProvider from "./context/WorkOutContext";
+import WorkOutProvider from "../context/WorkOutContext";
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer/>
+        <ToastContainer />
         </WorkOutProvider>
       </body>
     </html>

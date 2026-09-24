@@ -11,7 +11,8 @@ const WorkOutProvider = ({children}:{children: ReactNode}) => {
     const shareData = {
         addWorkOut,
         setWorkOut,
-        saveWorkOut,setSaveWOrkOut,
+        saveWorkOut,
+        setSaveWOrkOut,
     };
 
 

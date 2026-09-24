@@ -1,7 +1,7 @@
+import WorkOutButtons from "@/components/workoutcomp/WorkOutButtons";
 import { fitType } from "@/type/fit.type";
 import Image from "next/image";
-import { MdOutlineDateRange } from "react-icons/md";
-import { CiBookmark } from "react-icons/ci";
+
 import React from "react";
 
 const WorkoutDetails = async ({
@@ -113,11 +113,7 @@ const WorkoutDetails = async ({
             </ol>
           </div>
 
-          <div className="flex gap-4">
-            <button className="btn text-sm bg-[#CCFF00] border-[#CCFF00] rounded-xl"><MdOutlineDateRange size={16} /> Add to today&apos;s plan</button>
-            <button className="btn text-sm bg-black border-white text-white border rounded-xl"><CiBookmark size={16} /> Save for later</button>
-
-          </div>
+          <WorkOutButtons workout={work} />
         </div>
       </div>
     </div>
