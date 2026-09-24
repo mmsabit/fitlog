@@ -1,8 +1,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@theme {
+  --font-inter: var(--font-inter), sans-serif;
+  --font-oswald: var(--font-oswald), sans-serif;
+}
+
 body{
   background-color: #0c0d10;
+  font-family: var(--font-inter), sans-serif;
+}
+
+h1,h2,h3,h4,h5{
+  font-family: var(--font-oswald), sans-serif;
 }
 
 .menu li{
