@@ -4,3 +4,20 @@
 body{
   background-color: #0c0d10;
 }
+
+.menu li{
+  color: #9CA3AF;
+  padding: 6px 16px;
+  border-radius: 99;
+  font-size: 16px;
+}
+
+.menu li:hover{
+  color: #C2F800;
+}
+
+.menu li.active{
+  background-color: #1A2312;
+  color: #C2F800;
+  font-weight: 500;
+}
