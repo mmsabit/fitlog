@@ -2,6 +2,7 @@ import Logo from "@/assets/Logo.png"
 import Image from "next/image";
 import Link from "next/link";
 import Navlinks from "./Navlinks";
+import NavberPoints from "./NavberPoints";
 
 const Navber = () => {
 
@@ -50,10 +51,7 @@ const Navber = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <ul className="point flex items-center text-[#D1D5DB] gap-6">
-            <li>Plan <span className="bg-[#C2F800] py-1 px-2.5 ms-1 font-bold text-black rounded-full">0</span></li>
-            <li>Saved <span className="py-1 px-2.5 ms-1 font-bold rounded-full border border-[#2D313B]">0</span></li>
-          </ul>
+          <NavberPoints/>
         </div>
       </div>
     </div>
