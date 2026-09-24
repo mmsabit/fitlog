@@ -13,11 +13,11 @@ const FitLibrary = async () => {
             <div className="mb-5">
             <h2 className="text-3xl font-bold uppercase text-white">The Library</h2>
             <p className="text-[#9CA3AF]">Twelve lifts covering every major muscle group.</p>
+            </div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
                 {exercises.map((exercise:fitType) => (
                     <FitCard key={exercise.id} fit={exercise}/>
                 ))}
-            </div>
             </div>
         </div>
     );

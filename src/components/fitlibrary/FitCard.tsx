@@ -5,6 +5,7 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 import { fitType } from "@/type/fit.type";
+import Link from "next/link";
 
 export interface fitProps{
     fit:fitType
@@ -13,6 +14,7 @@ export interface fitProps{
 const FitCard = ({fit}:fitProps) => {
   return (
     <div>
+      <Link href={`/workouts/${fit.id}`}>
       <div className="overflow-hidden rounded-[15px] border border-[#293039] bg-[#14171d] text-white">
         <div className="relative h-70.25 w-full">
           <Image
@@ -59,6 +61,7 @@ const FitCard = ({fit}:fitProps) => {
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 };
