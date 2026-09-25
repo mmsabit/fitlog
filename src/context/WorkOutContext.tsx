@@ -7,12 +7,14 @@ export const WorkOutContext = createContext({});
 const WorkOutProvider = ({children}:{children: ReactNode}) => {
     const [addWorkOut, setWorkOut] = useState([]);
     const [saveWorkOut, setSaveWOrkOut] = useState([]);
-
+    const [isactive, setIsactive] = useState("plan");
     const shareData = {
         addWorkOut,
         setWorkOut,
         saveWorkOut,
         setSaveWOrkOut,
+        isactive,
+        setIsactive
     };
 
 
