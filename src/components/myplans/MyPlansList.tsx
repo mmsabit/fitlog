@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaRegClock, FaFire, FaStar, FaCheck, FaXmark } from "react-icons/fa6";
 
-const MyPlansList = ({ workout }: { workout: fitType }) => {
+const MyPlansList = ({ workout, handleDelete }: { workout: fitType; handleDelete: (workout: fitType) => void }) => {
   return (
     <div className="flex lg:flex-row gap-5 flex-col w-full items-center justify-between rounded-2xl border border-[#2a3440] bg-[#11151d] px-4 py-4 text-white mb-5 relative">
       <div className="flex lg:flex-row flex-col items-center gap-4 w-full">
@@ -64,6 +64,7 @@ const MyPlansList = ({ workout }: { workout: fitType }) => {
         <button
           type="button"
           className="ml-2 flex h-8 w-8 items-center justify-center lg:text-[#68717c] text-white transition hover:text-white lg:static absolute top-5 right-5"
+          onClick={() => handleDelete(workout)}
         >
           <FaXmark className="text-[17px]" />
         </button>

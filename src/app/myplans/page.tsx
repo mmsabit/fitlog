@@ -4,33 +4,79 @@ import Myplanpoint from "@/components/myplans/Myplanpoint";
 import { WorkOutContext } from "@/context/WorkOutContext";
 import { fitType } from "@/type/fit.type";
 import React, { useContext, useState } from "react";
-import { GoSortDesc } from "react-icons/go";
+import { Bounce } from "react-toastify";
+import { toast } from "react-toastify/unstyled";
 
 const MyPlan = () => {
   type isactive = "plan" | "saved";
-  const { addWorkOut, saveWorkOut, isactive, setIsactive } = useContext(
-    WorkOutContext,
-  ) as {
+  const {
+    addWorkOut,
+    saveWorkOut,
+    isactive,
+    setIsactive,
+    setSaveWOrkOut,
+    setWorkOut,
+  } = useContext(WorkOutContext) as {
     addWorkOut: fitType[];
     saveWorkOut: fitType[];
     isactive: isactive;
     setIsactive: React.Dispatch<React.SetStateAction<isactive>>;
+    setSaveWOrkOut: React.Dispatch<React.SetStateAction<fitType[]>>;
+    setWorkOut: React.Dispatch<React.SetStateAction<fitType[]>>;
   };
 
   const handleisactive = (newActive: isactive) => {
     setIsactive(newActive);
   };
 
-  const [sortBy, setSortBy] = useState<"default" | "duration" | "rating" | "calories">("default");
+  const handleDelete = (workout: fitType) => {
+    if (isactive === "plan") {
+      const updatedAddWorkOut = addWorkOut.filter(
+        (item) => item.id !== workout.id,
+      );
+      toast.success(`${workout.name} removed from your plan.`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      setWorkOut(updatedAddWorkOut);
+    } else if (isactive === "saved") {
+      const updatedSaveWorkOut = saveWorkOut.filter(
+        (item) => item.id !== workout.id,
+      );
+      toast.success(`${workout.name} removed from your saved workouts.`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      setSaveWOrkOut(updatedSaveWorkOut);
+    }
+  };
+
+  const [sortBy, setSortBy] = useState<
+    "default" | "duration" | "rating" | "calories"
+  >("default");
 
   const sortWorkouts = (workouts: fitType[]) => {
     const sortedWorkouts = [...workouts];
 
-    if(sortBy === "duration") {
+    if (sortBy === "duration") {
       sortedWorkouts.sort((a, b) => a.duration - b.duration);
-    } else if(sortBy === "rating") {
+    } else if (sortBy === "rating") {
       sortedWorkouts.sort((a, b) => b.rating - a.rating);
-    } else if(sortBy === "calories") {
+    } else if (sortBy === "calories") {
       sortedWorkouts.sort((a, b) => b.caloriesBurned - a.caloriesBurned);
     }
     return sortedWorkouts;
@@ -77,7 +123,15 @@ const MyPlan = () => {
           <select
             value={sortBy}
             className="select min-w-50 bg-[#232732] text-white rounded-lg "
-            onChange={(e) => setSortBy(e.target.value as "default" | "duration" | "rating" | "calories")}
+            onChange={(e) =>
+              setSortBy(
+                e.target.value as
+                  | "default"
+                  | "duration"
+                  | "rating"
+                  | "calories",
+              )
+            }
           >
             <option value="default">Default</option>
             <option value="duration">Duration</option>
@@ -88,9 +142,12 @@ const MyPlan = () => {
       </div>
       <div className="mt-5">
         {isactive === "plan" ? (
-          <MyPlanMid workouts={sortedAddWorkouts} />
+          <MyPlanMid workouts={sortedAddWorkouts} handleDelete={handleDelete} />
         ) : (
-          <MyPlanMid workouts={sortedSaveWorkouts} />
+          <MyPlanMid
+            workouts={sortedSaveWorkouts}
+            handleDelete={handleDelete}
+          />
         )}
       </div>
     </div>
