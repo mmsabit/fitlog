@@ -1,9 +1,10 @@
 import { fitType } from "@/type/fit.type";
 import Image from "next/image";
 import Link from "next/link";
-import { FaRegClock, FaFire, FaStar, FaCheck, FaXmark } from "react-icons/fa6";
+import { FaRegClock, FaFire, FaStar, FaXmark } from "react-icons/fa6";
+import MarkAsDone from "./MarkAsDone";
 
-const MyPlansList = ({ workout, handleDelete }: { workout: fitType; handleDelete: (workout: fitType) => void }) => {
+const MyPlansList = ({ workout, handleDelete,  }: { workout: fitType; handleDelete: (workout: fitType) => void;}) => {
   return (
     <div className="flex lg:flex-row gap-5 flex-col w-full items-center justify-between rounded-2xl border border-[#2a3440] bg-[#11151d] px-4 py-4 text-white mb-5 relative">
       <div className="flex lg:flex-row flex-col items-center gap-4 w-full">
@@ -47,19 +48,13 @@ const MyPlansList = ({ workout, handleDelete }: { workout: fitType; handleDelete
         <Link href={`/workouts/${workout.id}`}>
           <button
             type="button"
-            className="h-9 rounded-full border border-[#35404d] px-4.5 text-[12px] font-medium text-[#d7dbe0] transition hover:bg-[#1a2029]"
+            className="py-2.5 rounded-full border border-[#35404d] px-5 text-[12px] font-medium text-[#d7dbe0] transition hover:bg-[#1a2029]"
           >
             View Details
           </button>
         </Link>
 
-        <button
-          type="button"
-          className="flex h-8.5 items-center gap-2 rounded-full bg-[#c6ff00] px-5 text-[12px] font-semibold text-black transition hover:bg-[#b8ef00]"
-        >
-          <FaCheck className="text-[11px]" />
-          Mark as Done
-        </button>
+        <MarkAsDone workout={workout} />
 
         <button
           type="button"

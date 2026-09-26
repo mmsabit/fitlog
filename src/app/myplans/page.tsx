@@ -85,6 +85,10 @@ const MyPlan = () => {
   const sortedAddWorkouts = sortWorkouts(addWorkOut);
   const sortedSaveWorkouts = sortWorkouts(saveWorkOut);
 
+ 
+
+
+
   return (
     <div className="my-10 container mx-auto max-w-9/10">
       <div className="">
@@ -142,11 +146,15 @@ const MyPlan = () => {
       </div>
       <div className="mt-5">
         {isactive === "plan" ? (
-          <MyPlanMid workouts={sortedAddWorkouts} handleDelete={handleDelete} />
+          <MyPlanMid
+            workouts={sortedAddWorkouts}
+            handleDelete={handleDelete}
+          />
         ) : (
           <MyPlanMid
             workouts={sortedSaveWorkouts}
             handleDelete={handleDelete}
+
           />
         )}
       </div>
