@@ -19,3 +19,6 @@ In Fit Log, you can plan your exercise schedule, save the plan, mark exercises a
 3. Mark exercises as **Done** after completing them.
 4. Get information about exercises such as **Duration, Ratings, and Calories Burned**.
 5. User-friendly, responsive UI with **exercise filtering**.
+
+# Live link
+https://fitlog-gules-nine.vercel.app/ 
