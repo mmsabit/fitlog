@@ -68,8 +68,8 @@ const MyPlan = () => {
   };
 
   const [sortBy, setSortBy] = useState<
-    "default" | "duration" | "rating" | "calories"
-  >("default");
+     "duration" | "rating" | "calories"
+  >("duration");
 
   const sortWorkouts = (workouts: fitType[]) => {
     const sortedWorkouts = [...workouts];
@@ -132,14 +132,12 @@ const MyPlan = () => {
             onChange={(e) =>
               setSortBy(
                 e.target.value as
-                  | "default"
                   | "duration"
                   | "rating"
                   | "calories",
               )
             }
           >
-            <option value="default">Default</option>
             <option value="duration">Duration</option>
             <option value="rating">Rating</option>
             <option value="calories">Calories</option>
