@@ -5,6 +5,9 @@ import { FaRegClock, FaFire, FaStar, FaXmark } from "react-icons/fa6";
 import MarkAsDone from "./MarkAsDone";
 
 const MyPlansList = ({ workout, handleDelete,  }: { workout: fitType; handleDelete: (workout: fitType) => void;}) => {
+
+  
+
   return (
     <div className="flex lg:flex-row gap-5 flex-col w-full items-center justify-between rounded-2xl border border-[#2a3440] bg-[#11151d] px-4 py-4 text-white mb-5 relative">
       <div className="flex lg:flex-row flex-col items-center gap-4 w-full">

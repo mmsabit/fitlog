@@ -4,8 +4,7 @@ import Myplanpoint from "@/components/myplans/Myplanpoint";
 import { WorkOutContext } from "@/context/WorkOutContext";
 import { fitType } from "@/type/fit.type";
 import React, { useContext, useState } from "react";
-import { Bounce } from "react-toastify";
-import { toast } from "react-toastify/unstyled";
+import { Bounce, toast } from "react-toastify";
 
 const MyPlan = () => {
   type isactive = "plan" | "saved";
@@ -34,7 +33,9 @@ const MyPlan = () => {
       const updatedAddWorkOut = addWorkOut.filter(
         (item) => item.id !== workout.id,
       );
-      toast.success(`${workout.name} removed from your plan.`, {
+
+      setWorkOut(updatedAddWorkOut);
+      toast.warn(`${workout.name} removed from your plan.`, {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -45,12 +46,13 @@ const MyPlan = () => {
         theme: "light",
         transition: Bounce,
       });
-      setWorkOut(updatedAddWorkOut);
+      
     } else if (isactive === "saved") {
       const updatedSaveWorkOut = saveWorkOut.filter(
         (item) => item.id !== workout.id,
       );
-      toast.success(`${workout.name} removed from your saved workouts.`, {
+      setSaveWOrkOut(updatedSaveWorkOut);
+      toast.warn(`${workout.name} removed from your saved workouts.`, {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -61,7 +63,7 @@ const MyPlan = () => {
         theme: "light",
         transition: Bounce,
       });
-      setSaveWOrkOut(updatedSaveWorkOut);
+      
     }
   };
 

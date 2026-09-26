@@ -9,7 +9,7 @@ const FitLibrary = async () => {
     const exercises = await res.json();
 
     return (
-        <div className="container mx-auto my-12  max-w-9/10">
+        <div className="container mx-auto my-12  max-w-9/10" id="fitlibrary">
             <div className="mb-5">
             <h2 className="text-3xl font-bold uppercase text-white">The Library</h2>
             <p className="text-[#9CA3AF]">Twelve lifts covering every major muscle group.</p>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Emptylist = () => {
@@ -15,12 +16,14 @@ const Emptylist = () => {
         </p>
 
         {}
+        <Link href="/">
         <button
           type="button"
-          className="bg-[#ccff00] hover:bg-[#b8eb00] text-neutral-950 font-bold px-8 py-3.5 rounded-full text-sm sm:text-base shadow-lg transition-transform active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#ccff00]/40"
+          className="bg-[#ccff00] hover:bg-[#b8eb00] text-neutral-950 font-bold px-8 py-3.5 rounded-full text-sm sm:text-base shadow-lg transition-transform active:scale-95 "
         >
           Go to workouts
         </button>
+        </Link>
       </div>
   );
 };
