@@ -51,7 +51,7 @@ const MyPlansList = ({ workout, handleDelete,  }: { workout: fitType; handleDele
         <Link href={`/workouts/${workout.id}`}>
           <button
             type="button"
-            className="py-2.5 rounded-full border border-[#35404d] px-5 text-[12px] font-medium text-[#d7dbe0] transition hover:bg-[#1a2029]"
+            className="py-2.5 rounded-full border border-[#35404d] px-5 text-[12px] font-medium text-[#d7dbe0] transition hover:bg-[#1a2029] cursor-pointer"
           >
             View Details
           </button>
@@ -61,7 +61,7 @@ const MyPlansList = ({ workout, handleDelete,  }: { workout: fitType; handleDele
 
         <button
           type="button"
-          className="ml-2 flex h-8 w-8 items-center justify-center lg:text-[#68717c] text-white transition hover:text-white lg:static absolute top-5 right-5"
+          className="ml-2 flex h-8 w-8 items-center justify-center lg:text-[#68717c] text-white transition hover:text-white lg:static absolute top-5 right-5 cursor-pointer"
           onClick={() => handleDelete(workout)}
         >
           <FaXmark className="text-[17px]" />

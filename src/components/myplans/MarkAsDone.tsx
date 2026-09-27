@@ -1,11 +1,17 @@
 "use client";
-import { useState } from "react";
+
 import { fitType } from "@/type/fit.type";
 import { toast, Bounce } from "react-toastify";
+import { useContext } from "react";
+import { WorkOutContext } from "@/context/WorkOutContext";
+
 
 
 const MarkAsDone = ({ workout }: { workout: fitType }) => {
-  const [markAsDone, setMarkAsDone] = useState<fitType[]>([]);
+  const {markAsDone, setMarkAsDone} = useContext(WorkOutContext) as {
+    markAsDone: fitType[];
+    setMarkAsDone: React.Dispatch<React.SetStateAction<fitType[]>>;
+  };
   const ismarked = markAsDone.some((item) => item.id === workout.id);
   const handleMarkAsDone = (workout: fitType) => {
     
