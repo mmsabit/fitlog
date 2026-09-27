@@ -7,7 +7,7 @@ import NavberPoints from "./NavberPoints";
 const Navber = () => {
 
   return (
-    <div className="border-b border-[#1c1f26]">
+    <div className="border-b border-[#1c1f26] sticky top-0 z-99 bg-[#0c0d10]">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
